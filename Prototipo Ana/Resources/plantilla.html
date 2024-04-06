@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Document</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            table.border th, table.border td {
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+        table.subtotals {
+            width: 100%;
+            border-collapse: collapse;
+            border: 0;
+        }
+
+            table.subtotals td {
+                border: 0;
+            }
+
+        table#acprintTable {
+            margin-top: 90px; /* Ajusta este valor según sea necesario */
+        }
+
+        .linea {
+            border: 10px;
+            height: 2px;
+            margin-top: 120px;
+            background-color: black;
+            width: 100%; /* Establece el ancho al 100% del contenedor */
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 60%;">
+                <table id="acprintTable">
+                    <tr>
+                        <td align="left" style="font-size: 18px;"><strong>ACPRINTRD, SRL</strong></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-size: 12px;">
+                            CALLE 1ERA. NO. 30. RESIDENCIAL ROSMIL III
+                            SANTO DOMINGO DE GUZMAN, DISTRITO NACIONAL.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-size: 13px;">
+                            RNC: 1-32-73390-8
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-size: 12px;">
+                            CONTACTO: ANA KARINA CUICA; 849-696-3299
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 15%;">
+                <table>
+                    <tr>
+                        <td style="font-size: 10px"> NCF: @CONT</td>
+                    </tr>
+                </table>
+            </td>
+
+            <td style="width: 25%;">
+                <table class="border" style="width: 100%;">
+                    <tr>
+                        <td align="center" style="font-size: 12px;">@Factura</td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="font-size: 14px;">Nro: @NumFac</td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="font-size: 14px;">@Fecha</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="20"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width: 100%;">
+                    <thead style="background-color: #48432B; color: white;">
+                        <tr>
+                            <th style="font-size: 20px">Cliente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td align="left"><strong>CLIENTE:</strong></td>
+                                        <td>@Cliente</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><strong>RNC:</strong></td>
+                                        <td>@Rnc</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="20"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width: 100%;">
+                    <thead style="background-color: #48432B; color: white;">
+                        <tr>
+                            <th>DESCRIPCION</th>
+                            <th align="center">PRECIO UNIT. </th>
+                            <th align="center">CANT.</th>
+                            <th align="center">ITBIS</th>
+                            <th align="center">TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--tr>
+                            <td>60</td>
+                            <td>2 fulano</td>
+                            <td>20</td>
+                            <td>19.8</td>
+                            <td>40000</td>
+                        </!--tr-->
+                        @Lista
+                        <tr>
+                            <td style="border: 0px !important;"></td>
+                            <td style="border: 0px !important;"></td>
+                            <td style="border: 0px !important;"></td>
+                            <td align="left"><strong>Neto</strong></td>
+                            <td align="right">@SubTotal</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 0px !important;"></td>
+                            <td style="border: 0px !important;"></td>
+                            <td style="border: 0px !important;"></td>
+                            <td align="left"><strong>Impuestos</strong></td>
+                            <td align="right">@Impuestos</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 0px !important;"></td>
+                            <td style="border: 0px !important;"></td>
+                            <td style="border: 0px !important;"></td>
+                            <td align="left"><strong>Total</strong></td>
+                            <td align="right">@Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <hr class="linea"></hr>
+    <p align="left" style="font-size: 13px;">Condicion de pago: @Estado</p>
+    <div style="margin-top: 28px;"></div>
+    <table style="width: 70%;">
+        <tr>
+            <td colspan="1" style="width: 0%;"><strong>X</strong></td>
+            <td colspan="2" style="width: 50%; border-bottom: 1px solid black;"></td>
+        </tr>
+    </table>
+    <p style="font-size: 15px;">Nombre del cliente</p>
+</body>
+</html>
